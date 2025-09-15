@@ -1,0 +1,1 @@
+﻿Add-Migration LendingPad -Context RelationalDbContext -StartupProject Data 

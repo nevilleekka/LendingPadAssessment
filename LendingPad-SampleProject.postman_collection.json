@@ -1,0 +1,614 @@
+{
+	"info": {
+		"_postman_id": "a4d704f3-2e64-437c-aca1-a010ffbf325d",
+		"name": "LendingPad-SampleProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48400044"
+	},
+	"item": [
+		{
+			"name": "Initialize Sample Data",
+			"item": [
+				{
+					"name": "Clear Users",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{LocalDomain}}/users/clear",
+							"host": [
+								"{{LocalDomain}}"
+							],
+							"path": [
+								"users",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User - John",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"John Smith\",\r\n    \"email\": \"mark@companya.com\",\r\n    \"type\": 2,\r\n    \"age\": 27,\r\n    \"annualSalary\": 72000,\r\n    \"tags\": [\"A\", \"C\", \"D\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LocalDomain}}/users/1422740e-6426-4c46-8445-3f5274a62424/create",
+							"host": [
+								"{{LocalDomain}}"
+							],
+							"path": [
+								"users",
+								"1422740e-6426-4c46-8445-3f5274a62424",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User - Mark",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mark Williams\",\r\n    \"email\": \"mark@companya.com\",\r\n    \"type\": 1,\r\n    \"age\": 35,\r\n    \"annualSalary\": 120000,\r\n    \"tags\": [\"b\", \"c\", \"e\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LocalDomain}}/users/9422740e-6426-4c46-8445-3f5274a62424/create",
+							"host": [
+								"{{LocalDomain}}"
+							],
+							"path": [
+								"users",
+								"9422740e-6426-4c46-8445-3f5274a62424",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create User - Andy",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Andy\",\r\n    \"email\": \"andy@companya.com\",\r\n    \"type\": 2,\r\n    \"age\": 34,\r\n    \"annualSalary\": 86000,\r\n    \"tags\": [\"D\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LocalDomain}}/users/8722740e-6426-4c46-8445-3f5274a62424/create",
+							"host": [
+								"{{LocalDomain}}"
+							],
+							"path": [
+								"users",
+								"8722740e-6426-4c46-8445-3f5274a62424",
+								"create"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Tasks",
+			"item": [
+				{
+					"name": "Create User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "//The exception \"PUT attempted on document 'users/1422740e-6426-4c46-8445-3f5274a62424' using a non current etag\" means that the record with the same ID already exists.\r\n{\r\n    \"name\": \"Mary\",\r\n    \"email\": \"mary@companya.com\",\r\n    \"type\": 1,\r\n    \"age\": 29,\r\n    \"annualSalary\": 80000,\r\n    \"tags\": []\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LocalDomain}}/users/1422740e-6426-4c46-8445-3f5274a62424/create",
+							"host": [
+								"{{LocalDomain}}"
+							],
+							"path": [
+								"users",
+								"1422740e-6426-4c46-8445-3f5274a62424",
+								"create"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User - A",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mark Williams (updated)\",\r\n    \"email\": null,\r\n    \"type\": 2,\r\n    \"age\": 29,\r\n    \"annualSalary\": 80000,\r\n    \"tags\": [\"A\", \"C\", \"D\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LocalDomain}}/users/9422740e-6426-4c46-8445-3f5274a62424/update",
+							"host": [
+								"{{LocalDomain}}"
+							],
+							"path": [
+								"users",
+								"9422740e-6426-4c46-8445-3f5274a62424",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User - B",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mark Williams\",\r\n    \"email\": \"mark@companya.com\",\r\n    \"type\": 1,\r\n    \"age\": 29,\r\n    \"annualSalary\": null,\r\n    \"tags\": [\"A\", \"C\", \"D\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LocalDomain}}/users/1422740e-6426-4c46-8445-3f5274a62424/update",
+							"host": [
+								"{{LocalDomain}}"
+							],
+							"path": [
+								"users",
+								"1422740e-6426-4c46-8445-3f5274a62424",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User - C",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Mark Williams\",\r\n    \"email\": \"mark@companya.com\",\r\n    \"type\": 1,\r\n    \"age\": 29,\r\n    \"annualSalary\": 152000,\r\n    \"tags\": null\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{LocalDomain}}/users/1422740e-6426-4c46-8445-3f5274a62424/update",
+							"host": [
+								"{{LocalDomain}}"
+							],
+							"path": [
+								"users",
+								"1422740e-6426-4c46-8445-3f5274a62424",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LocalDomain}}/users/list",
+							"host": [
+								"{{LocalDomain}}"
+							],
+							"path": [
+								"users",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users By Tag",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LocalDomain}}/users/tag?tag=A&tag=D",
+							"host": [
+								"{{LocalDomain}}"
+							],
+							"path": [
+								"users",
+								"tag"
+							],
+							"query": [
+								{
+									"key": "tag",
+									"value": "A"
+								},
+								{
+									"key": "tag",
+									"value": "D"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{LocalDomain}}/users/get?skip=0&take=100",
+							"host": [
+								"{{LocalDomain}}"
+							],
+							"path": [
+								"users",
+								"get"
+							],
+							"query": [
+								{
+									"key": "skip",
+									"value": "0"
+								},
+								{
+									"key": "take",
+									"value": "100"
+								},
+								{
+									"key": "type",
+									"value": "Employee",
+									"disabled": true
+								},
+								{
+									"key": "name",
+									"value": "",
+									"disabled": true
+								},
+								{
+									"key": "email",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Requests",
+			"item": [
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Get All Products",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LocalDomain}}/api/CustomerOrder/AllProducts",
+									"host": [
+										"{{LocalDomain}}"
+									],
+									"path": [
+										"api",
+										"CustomerOrder",
+										"AllProducts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "p",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "GeekWire",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Thermos",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{LocalDomain}}/api/CustomerOrder/CreateProduct",
+									"host": [
+										"{{LocalDomain}}"
+									],
+									"path": [
+										"api",
+										"CustomerOrder",
+										"CreateProduct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete Product",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "p",
+										"value": "",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "GeekWire",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Thermos",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{LocalDomain}}/api/CustomerOrder/DeleteProduct",
+									"host": [
+										"{{LocalDomain}}"
+									],
+									"path": [
+										"api",
+										"CustomerOrder",
+										"DeleteProduct"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Delete All Products",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LocalDomain}}/api/CustomerOrder/DeleteAllProducts",
+									"host": [
+										"{{LocalDomain}}"
+									],
+									"path": [
+										"api",
+										"CustomerOrder",
+										"DeleteAllProducts"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Product",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LocalDomain}}/api/CustomerOrder/product/11D1F0F1-0FAA-45CB-ACB8-55A3090E8D0C",
+									"host": [
+										"{{LocalDomain}}"
+									],
+									"path": [
+										"api",
+										"CustomerOrder",
+										"product",
+										"11D1F0F1-0FAA-45CB-ACB8-55A3090E8D0C"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Delete Customer Order",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LocalDomain}}/api/CustomerOrder/DeleteCustomerOrder?customer=Neville",
+									"host": [
+										"{{LocalDomain}}"
+									],
+									"path": [
+										"api",
+										"CustomerOrder",
+										"DeleteCustomerOrder"
+									],
+									"query": [
+										{
+											"key": "customer",
+											"value": "Neville"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get All Orders",
+							"request": {
+								"method": "GET",
+								"header": []
+							},
+							"response": []
+						},
+						{
+							"name": "Get Order by Id",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LocalDomain}}/api/CustomerOrder?Id=EA54EFCB-DEA9-4ACE-8975-3D2680CED971",
+									"host": [
+										"{{LocalDomain}}"
+									],
+									"path": [
+										"api",
+										"CustomerOrder"
+									],
+									"query": [
+										{
+											"key": "Id",
+											"value": "EA54EFCB-DEA9-4ACE-8975-3D2680CED971"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Create Order",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "productName",
+											"value": "Akai",
+											"type": "text"
+										},
+										{
+											"key": "customerName",
+											"value": "Neville",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{LocalDomain}}/api/CustomerOrder/CreateOrder/",
+									"host": [
+										"{{LocalDomain}}"
+									],
+									"path": [
+										"api",
+										"CustomerOrder",
+										"CreateOrder",
+										""
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "DeleteAllOrders",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{LocalDomain}}/api/CustomerOrder/DeleteAllOrders",
+									"host": [
+										"{{LocalDomain}}"
+									],
+									"path": [
+										"api",
+										"CustomerOrder",
+										"DeleteAllOrders"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Customer Order",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{LocalDomain}}/api/CustomerOrder/CustomerOrder?customer=Neville",
+									"host": [
+										"{{LocalDomain}}"
+									],
+									"path": [
+										"api",
+										"CustomerOrder",
+										"CustomerOrder"
+									],
+									"query": [
+										{
+											"key": "customer",
+											"value": "Neville"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
